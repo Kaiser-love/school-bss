@@ -1,0 +1,13 @@
+<view style="display:none">
+  <image src="{{mainImg}}" bindload="onImageLoad"></image>
+</view>
+<scroll-view>
+  <blcok wx:for="{{subNews}}" wx:for-item="subNewsItem" wx:for-index="idx" wx:key="index">
+    <view class="subNews-wrapper" id="the-{{idx}}">
+      <view class="subNews-subTitle" bindtap="goTop" data-hi="{{catalogIndex}}">
+        <text>{{subNewsItem.title}}</text>
+      </view>
+      <subNewsBranch detailNews="{{subNewsItem.detailNews}}" mainTitle="{{mainTitle}}" mainImg="{{mainImg}}" mainFocus="{{mainFocus}}"></subNewsBranch>
+    </view>
+  </blcok>
+</scroll-view>

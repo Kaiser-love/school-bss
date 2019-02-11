@@ -1,0 +1,59 @@
+/* pages/posts/posts.wxss */
+
+.posts {
+  width: 730rpx;
+  height: auto;
+  display: flex;
+  align-items: center;
+  padding: 20rpx 0rpx;
+  background-color: rgb(255, 255, 255);
+}
+.posts:active {
+  background: #ddd;
+}
+
+.posts-image {
+  width: 100rpx;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+}
+
+.posts-titledate {
+  width: 620rpx;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  margin: 0rpx 0rpx 0rpx 10rpx;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0rpx 20rpx 0rpx 0rpx;
+  background-color: rgb(255, 255, 255);
+}
+.posts-title {
+  width: 100%;
+  height: 32rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: rgb(255, 255, 255);
+}
+.posts-title text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.posts-date {
+  width: 100%;
+  height: 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: inherit;
+  padding: 10rpx 0rpx;
+  background-color: rgb(255, 255, 255);
+}
+
+.posts-button {
+  background: blue;
+  border: solid blue;
+}

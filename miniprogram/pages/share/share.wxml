@@ -1,0 +1,34 @@
+<import src="../../templates/listtemplate" />
+<view>
+  <scroll-view scroll-x="true" class="tab-h" scroll-left="{{scrollLeft}}">
+    <i-tabs current="{{ currentTab }}" color="#f759ab" bindchange="handleChange" i-class="tab-item">
+      <i-tab key="0" title="音乐影视" count="3"></i-tab>
+      <i-tab key="1" title="学习分享" dot></i-tab>
+      <i-tab key="2" title="你说我听" dot></i-tab>
+      <i-tab key="3" title="社团协会" dot></i-tab>
+    </i-tabs>
+  </scroll-view>
+
+  <swiper current="{{currentTab}}" duration="300" bindchange="switchTab" style="height:{{winHeight+100}}rpx" class="tab-content">
+    <swiper-item wx:for="{{[0,1,2,4]}}" wx:key="this">
+          <van-search value="{{ inputvalue }}" placeholder="请输入搜索关键词" bind:search="onSearch">
+      </van-search>
+      <scroll-view scroll-y="true" class='scoll-h' bindscrolltolower="laodMore" bindscrolltoupper="refreshMore">
+        <view class='tab-content-item'>
+          <block wx:for="{{newsList}}" wx:key="this">
+            <view class='section_list' bindtap="navigateDetail" data-itemId="{{item._id}}">
+              <template is="listbar" data="{{...item}}"></template>
+            </view>
+          </block>
+        </view>
+          <view class='load-class'>
+        <i-load-more tip="{{hasNext?'':'等你来分享'}}" loading="{{ hasNext }}" />
+         </view>
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+  <view bindtap='addArticle'>
+    <image class="add_icon" src="../../images/icon/collection.png"></image>
+  </view>
+  <i-toast id="toast" />
+</view>

@@ -1,0 +1,161 @@
+page {
+  background: white;
+}
+
+.form-list {
+  position: relative;
+  margin-bottom: 20rpx;
+}
+
+.form-list:first-child {
+  margin-top: 20rpx;
+}
+
+.form-list::before, .form-list::after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  height: 1px;
+  width: 100%;
+  transform: scaleY(0.5);
+  background-color: #e3e3e3;
+}
+
+.form-list::before {
+  top: 0;
+}
+
+.form-list::after {
+  bottom: 0;
+}
+
+.form-item {
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  width: 100%;
+  padding: 15rpx 40rpx;
+}
+
+.form-item::before {
+  content: '';
+  display: block;
+  position: absolute;
+  z-index: 99;
+  left: 0;
+  top: 0;
+  height: 1px;
+  width: 100%;
+  transform: scaleY(0.5);
+  background-color: #e3e3e3;
+}
+
+.form-item:first-child::before {
+  display: none;
+}
+
+.form-item-hd {
+  width: 150rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+
+.form-item-bd {
+  flex: 1;
+  height: 60rpx;
+}
+
+input, .input {
+  box-sizing: border-box;
+  width: 100%;
+  height: 60rpx;
+  line-height: 60rpx;
+  background-color: #fff;
+  padding: 0 15rpx;
+}
+.i-input {
+  line-height: 1.6;
+  padding: 4rpx 100rpx;
+  min-height: 22px;
+  height: auto;
+}
+.input-placeholder {
+  color: #808080;
+}
+
+/* 内容区开始 */
+ .textarea {
+    padding: 20px;
+    width: 100%;
+    color: #333;
+    min-height: 180px;
+    background: #FFF;
+    font-size: 16px;
+    line-height: 36px;
+  }
+.image-list {
+  padding: 15px;
+  padding-top: 0;
+  width: 100%;
+  background: #fff;
+  overflow: hidden;
+}
+
+.choosed-image-list {
+  position: relative;
+  float: left;
+  width: 70px;
+  height: 70px;
+  margin-right: 15px;
+  margin-top: 15px;
+}
+
+.choosed-image {
+  width: 100%;
+  height: 100%;
+}
+
+.choosed-image-delete-btn {
+  position: absolute;
+  right: -10px;
+  top: -10px;
+  width: 20px;
+  height: 20px;
+}
+
+.choosed-image-delete-btn-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.choose-image-btn {
+  float: left;
+  width: 70px;
+  height: 70px;
+  margin-top: 15px;
+}
+
+.choose-image-btn-icon {
+  width: 70px;
+  height: 70px;
+}
+
+/* 内容区结束 */
+text {
+  color: black;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 32px;
+}
+.edit-btn {
+  width: 300rpx;
+  height: 80rpx;
+  margin: 0 auto;
+  font-size: 32rpx;
+  text-align: center;
+  line-height: 80rpx;
+  background-color: #47a86c;
+  border-radius: 80rpx;
+  color: #fff;
+}

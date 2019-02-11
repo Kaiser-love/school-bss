@@ -1,0 +1,60 @@
+/* 评论开始 */
+
+.rec_list {
+  display: flex;
+  padding: 20rpx 0 0 20rpx;
+}
+
+.rec_avatar, .rec_avatar image {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+}
+
+.rec_main {
+  border-bottom: 1rpx solid #e1e2e3;
+  margin-left: 20rpx;
+  width: 650rpx;
+  font-size: 28rpx;
+  padding: 0 20rpx 15rpx 0;
+  line-height: 48rpx;
+}
+
+.rec_main .wxEmoji {
+  vertical-align: middle;
+  width: 42rpx;
+  height: 42rpx;
+  margin: 0 3rpx;
+}
+
+.rm_header {
+  font-size: 24rpx;
+  color: #999;
+  line-height: 1.8;
+  padding-bottom: 10rpx;
+}
+
+.rm_header view {
+  float: right;
+  line-height: 40rpx;
+}
+
+.fmh_time {
+  display: block;
+  font-size: 18rpx;
+}
+
+.rm_header .fmh_name {
+  font-size: 28rpx;
+  color: #333;
+  display: block;
+}
+
+.rm_header view image {
+  width: 40rpx;
+  height: 40rpx;
+  margin-left: 10rpx;
+  vertical-align: sub;
+}
+
+/* 评论结束 */

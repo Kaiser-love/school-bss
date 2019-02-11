@@ -1,0 +1,54 @@
+{
+  "cloud": true,
+  "pages": [
+    "pages/news/news",
+    "pages/test/test",
+    "pages/detail/detail",
+    "pages/send/send",
+    "pages/user/user",
+    "pages/posts/posts",
+    "pages/deal/deal",
+    "pages/tologin/tologin",
+    "pages/share/share",
+    "pages/skin/skin"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "校园论坛",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh ": true
+  },
+  "tabBar": {
+    "borderStyle": "#000000",
+    "color": "#59607B",
+    "selectedColor": "#3091F2",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "iconPath": "images/article-1.png",
+        "selectedIconPath": "images/article.png",
+        "text": "热点",
+        "pagePath": "pages/news/news"
+      },
+      {
+        "iconPath": "images/transport.png",
+        "selectedIconPath": "images/transport.png",
+        "text": "交易",
+        "pagePath": "pages/deal/deal"
+      },
+      {
+        "iconPath": "images/iconfont-kefu.png",
+        "selectedIconPath": "images/iconfont-kefu.png",
+        "text": "分享",
+        "pagePath": "pages/share/share"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "iconPath": "images/user-1.png",
+        "selectedIconPath": "images/user.png",
+        "text": "我的"
+      }
+    ]
+  }
+}

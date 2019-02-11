@@ -1,0 +1,95 @@
+.comment-wrapper {
+    width: 100%;
+    padding: 20rpx 50rpx 0 40rpx;
+    box-sizing: border-box;
+}
+.comment-wrapper .comment-info {
+    height: 100rpx;
+    box-sizing: border-box;
+}
+.comment-info .comment-info-avatar {
+    float: left;
+    height: 80rpx;
+    width: 80rpx;
+    background-color: green;
+    border-radius: 40rpx;
+    margin-right: 15rpx;
+}
+.comment-info .comment-info-center {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height: 80rpx;
+    line-height: 34rpx;
+    padding-top: 8rpx;
+    padding-bottom: 13rpx;
+    font-size: 24rpx;
+    width: 200rpx;
+    color: #b1b1b1;
+}
+.comment-info-center .comment-info-username {
+    font-size: 28rpx;
+    color: #858585;
+}
+.comment-info .comment-info-right {
+    float: right;
+    margin-top: -70rpx;
+    margin-right: -40rpx;
+    width: 100rpx;
+    height: 80rpx;
+    font-size: 20rpx;  
+    color: #858585;
+}
+.comment-info-right .dianzanNum {
+    margin-right: 6rpx;
+}
+
+.comment-wrapper .comment-content {
+    width: 100%;
+    display: block;
+    box-sizing: border-box;
+    padding-left: 95rpx;
+    padding-right: 20rpx;
+    font-size: 30rpx;
+    line-height: 10rpx;
+    position: relative;
+}
+.comment-content::after {
+    content: "";
+    position: absolute;
+    width: 166%;
+    height: 200%;
+    top: 26rpx;
+    left: 0;
+    border-bottom: 1rpx solid rgba(177, 177, 177, 0.8);
+    transform: scale(0.5);
+    transform-origin: 0 0;
+    margin-left: 100rpx;
+}
+.comment-content .comment-content-main {
+    font-size: 30rpx;
+    line-height: 40rpx;
+    margin-top: -26rpx;
+    display: block;
+}
+.comment-content .comment-content-response {
+    padding: 30rpx 20rpx 0 0;
+    font-size: 24rpx;
+    line-height: 38rpx;
+}
+
+.comment-content-response .response-box {
+    border-left: 5rpx solid rgba(144, 144, 144, .4);
+    padding-left: 20rpx;
+    display: flex;
+    flex-direction: column;
+    font-size: 24rpx;
+    line-height: 36rpx;
+}
+.response-box .responseNum, .blue {
+    color: #68769a;
+}
+.response-box .responseNum {
+    font-size: 26rpx;
+    z-index: 9;
+}

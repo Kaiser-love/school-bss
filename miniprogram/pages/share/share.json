@@ -1,0 +1,9 @@
+{
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "i-tabs": "../../dist/tabs/index",
+    "i-tab": "../../dist/tab/index",
+    "i-toast": "../../dist/toast/index",
+    "van-search": "../../vant-weapp/search/index"
+  }
+}

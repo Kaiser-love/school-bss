@@ -1,0 +1,11 @@
+/* @import '../../comm/style/tab.wxss'; */
+
+page {
+  height: 100%;
+}
+.tab-content{
+  margin-top: 150rpx;
+}
+.tab-content-other{
+  margin-top: 70rpx;
+}

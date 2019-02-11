@@ -1,0 +1,46 @@
+
+.ImgBox_one{
+    z-index: 9;
+    box-sizing: border-box;
+    padding-top: 10rpx;
+    margin: 0;
+    overflow: hidden;
+    /* background-color: pink; */
+}
+.ImgBox_one  .imgOne {
+    height: 480rpx;
+    width: 670rpx; 
+    border-radius: 16rpx; 
+}
+.ImgBox_four{
+    height: 396rpx;
+    width: 396rpx;
+    /* border-radius: 6rpx; */
+    display: grid;
+    grid-template-rows:  repeat(2, 192rpx);
+    grid-template-columns: repeat(2, 192rpx);
+    grid-gap: 12rpx 12rpx;
+    box-sizing: border-box;
+    border-radius: 10rpx;
+    overflow: hidden;
+}
+.ImgBox_four > image {
+    z-index: 9;
+    box-sizing: border-box;
+    height: 192rpx;
+    width: 192rpx;
+}
+.ImgBoxN {
+    margin-right: 18rpx;
+    padding: 2rpx;
+    border-radius: 30rpx;
+    overflow: hidden;
+}
+.ImgBoxN > image {
+    z-index: 9;
+    float: left;
+    width: 208rpx;
+    height: 208rpx;
+    margin: 5.5rpx;
+}
+

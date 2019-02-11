@@ -1,0 +1,66 @@
+<wxs module="timeChangeover" src="../../utils/timeChangeover.wxs"></wxs>
+<import src="../../templates/commentslist" />
+<import src="../../templates/listtemplate" />
+<view style='display:flex;flex-direction:column'>
+  <view class="fd-hd">
+    <view class="fd-hd-bg" style="background-image: url({{detailMessage.images[0]}})"></view>
+    <image src="{{detailMessage.avatarUrl}}" class="fd-cover"></image>
+    <view class="fd-intro">
+      <view class="fd-title">{{detailMessage.type}}</view>
+      <view class="fd-intro-txt">作者：{{detailMessage.author}}</view>
+      <view class="fd-intro-txt">来自：{{detailMessage.device}}</view>
+      <view class="fd-intro-txt">定位：{{detailMessage.location}}</view>
+      <view class="fd-intro-txt">联系方式：{{detailMessage.phoneNumber}}</view>
+      <view class="fd-intro-txt">时间：{{timeChangeover.timeChangeover(detailMessage.date)}}</view>
+    </view>
+    <view class="fd-favorite {{isFilmFavorite ? 'fd-favorite-active' : ''}}" bindtap="collectPost">收藏</view>
+  </view>
+  <view class="fd-data">
+    <view class="fd-data-item">
+      <view class="fd-data-num">{{detailMessage.lookNum}}</view>
+      <view class="fd-data-title">看过</view>
+    </view>
+    <view class="fd-data-item">
+      <view class="fd-data-num">{{detailMessage.loveNum}}</view>
+      <view class="fd-data-title">喜欢</view>
+    </view>
+    <view class="fd-data-item">
+      <view class="fd-data-num">{{replyList.length}}</view>
+      <view class="fd-data-title">评论</view>
+    </view>
+  </view>
+  <!-- comments -->
+  <view class="fd-bd-title">标题</view>
+  <view class="fd-bd-intro">{{detailMessage.subject}}</view>
+  <view class="fd-bd-title">文章详情</view>
+  <text class="fd-bd-intro">{{detailMessage.content}}</text>
+  <view class="fd-bd-title">热门评论</view>
+  <template is="commentslist" data="{{rec:replyList}}" />
+  <!-- <view class="comments-list">
+    <view class="comments-item" wx:for="{{ replyList }}" wx:key="this" bindtap='showAction' data-sourceName='{{item.sourceName}}' data-_openid='{{item._openid}}' data-_id='{{item._id}}'>
+      <view class="comment-user-info">
+        <image src="{{ item.sourceAvatar }}" class="comment-user-avatar"></image>
+      </view>
+      <view class="comment-info">
+        <text class="comment-nickname">{{ item.sourceName }}</text>
+        <text class="comment-content">{{ item.content }}</text>
+      </view>
+    </view>
+  </view> -->
+  <!-- comments -->
+  <i-toast id="toast" />
+  <!-- comment -->
+  <view class="comment" wx:if="{{ !loading }}">
+    <view style='display:flex;flex-direction:row'>
+      <input class="comment-input" type="text" placeholder="{{ placeholder }}" bindinput="inputChange" bindfocus="inputFocus" bindblur="inputBlur" bindconfirm="inputConfirm" focus="{{ focusComment }}" value="{{ inputContent }}" confirm-type="send" cursor-spacing="42"
+      />
+      <i-button type="primary" bind:click="inputConfirm">发送</i-button>
+    </view>
+  </view>
+  <view class="isanonymous-btn {{ isAnonymous ? 'anonymous' : 'named' }}" bindtap='anonymousChange'>
+    <text class="anonymous-text">匿名</text>
+    <text class="named-text">实名</text>
+    <view class="isanonymous-btn-key {{ isAnonymous ? 'isanonymous-btn-key-anonymous' : 'isanonymous-btn-key-named' }}"></view>
+  </view>
+  <!-- comment -->
+</view>

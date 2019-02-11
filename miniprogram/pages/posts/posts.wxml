@@ -1,0 +1,32 @@
+<!--pages/posts/posts.wxml-->
+<wxs module="timeChangeover" src="../../utils/timeChangeover.wxs">
+</wxs>
+<view wx:if="{{postList.length==0&&postList}}">
+  暂无数据
+</view>
+<view>
+  <block wx:for="{{postList}}" wx:key="this">
+    <view data-_postid='{{item.postId}}' data-_id='{{item._id}}' class='posts' bindtouchstart="mytouchstart" bindtouchend="mytouchend" bindtap="editAddress">
+      <view class='posts-image'>
+        <image style="width: 100%;height: 100%;" src="{{item.avatarUrl?item.avatarUrl:'https://wx.qlogo.cn/mmopen/vi_32/kuRicCbWhUmg0ezS898737Fx8C2U053elBTzYWugRmPibtyRLRDhH6lnnIeBquuuEicuEXaXxVicoRNmCWEbEBQfaA/132'}}">
+        </image>
+      </view>
+      <view class='posts-titledate'>
+        <view class="posts-title">
+          <text style="color: rgb(0, 0, 0);font-size: 32rpx;text-align: center;height: 32rpx;line-height: 32rpx;   overflow: hidden;text-overflow: ellipsis;">{{item.subject?item.subject:'标题'}}
+</text>
+
+        </view>
+        <view class="posts-date">
+          <view style="color: rgb(136, 136, 136);font-size: 20rpx;text-align: center;height: 28rpx;line-height: 28rpx;align-items: center;align-content: center;display: flex;">{{item.author?item.author:'作者'}}
+          </view>
+          <view style="color: rgb(136, 136, 136);font-size: 28rpx;text-align: center;height: 28rpx;line-height: 28rpx;margin: 0rpx 15rpx 0rpx 0rpx;">{{timeChangeover.timeChangeover(item.date)}}
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class='selection'></view>
+  </block>
+</view>
+<i-toast id="toast" />

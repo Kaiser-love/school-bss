@@ -1,0 +1,20 @@
+<view class="{{open?'catalog-main':'catalog-hidden'}}" catch:tap="closeCatalog">
+    <view class="catalog-main-left"></view>
+    <view class="catalog-main-right">
+        <view class="catalog-main-title">
+            <text class="1">目录</text>
+        </view>
+        <view class="catalog-main-subTitle">
+        <block wx:for="{{subNews}}" wx:for-item="subNewsItem" wx:for-index="idx" wx:key="index">
+            <view class="subTitle-item" bind:tap="scrollFind" data-hi="{{idx}}">
+                    <text>{{subNewsItem.title}}</text>
+                </view>
+        </block>
+                
+        </view>
+    </view>
+</view>
+<view class="catalog-open" bind:tap="openCatalog">
+    <icon class="muluIcon" type="muluzhankai" size="32" color="#ffffff"></icon>
+    <text class="mulu">目录</text>
+</view>

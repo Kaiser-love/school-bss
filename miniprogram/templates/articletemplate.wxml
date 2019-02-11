@@ -1,0 +1,36 @@
+<wxs module="timeChangeover" src="../utils/timeChangeover.wxs"></wxs>
+<template name="articlebar">
+
+  <view style='border:5rpx solid #ddd' class="list-articles">
+    <view class="list-header">
+      <view class='list-item-header'>
+        <image src="http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg"></image>
+      </view>
+      <view class="list-item-header-name">By {{author}}</view>
+    </view>
+    <view class='list-item-text-headers'>
+      <view class="list-item-text-header-title">
+        <text>{{subject}}</text>
+      </view>
+      <view class="list-item-text-header-content">
+        <text>{{content}}</text>
+      </view>
+      <view>
+        <text style='color:blue;'>联系方式：{{phoneNumber}}</text>
+      </view>
+      <view class="list-item-text-border"></view>
+      <view class="new-img-num">
+        <view>
+          <image src="../../images/icon/view.png" class="new-img"></image>
+          <text class="new-num">{{lookNum}}</text>
+          <image src="../../images/icon/star.png" class="new-img"></image>
+          <text class="new-num">{{loveNum}}</text>
+        </view>
+        <view class="new-date">
+          {{timeChangeover.timeChangeover(date)}}
+        </view>
+      </view>
+    </view>
+  </view>
+
+</template>

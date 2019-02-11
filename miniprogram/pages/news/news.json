@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "i-tabs": "../../dist/tabs/index",
+    "i-tab": "../../dist/tab/index",
+    "i-load-more": "../../dist/load-more/index",
+    "i-toast": "../../dist/toast/index",
+    "van-notice-bar": "../../vant-weapp/notice-bar/index"
+  }
+}

@@ -1,0 +1,26 @@
+<wxs module="timeChangeover" src="../utils/timeChangeover.wxs"></wxs>
+<template name="commentslist">
+  <block wx:for="{{rec}}" wx:key="this">
+    <view class="limg_list rec_list">
+
+      <view class="rec_avatar">
+        <image class="user_avator" src="{{item.sourceAvatar}}" />
+      </view>
+      <view class="rec_main" data-index="{{idx}}" data-t="0">
+        <view class="rm_header">
+          <view bindtap="commentlike" data-cid="{{item._id}}">
+            <text>{{item.loveNum}}</text>
+            <image src="/images/{{item.isAgree || item.loveNum>0  ?'agree-a.png':'agree.png'}}" class="ripple {{item.isAgree?'rubberBand':''}}"></image>
+          </view>
+          <text class="fmh_name">{{item.sourceName}}</text>
+        </view>
+        <view bindtap="showAction" data-sourceName='{{item.sourceName}}' data-_openid='{{item._openid}}' data-_id='{{item._id}}'>
+          <view>
+            {{item.content}}
+          </view>
+          <text class="fmh_time"> {{timeChangeover.timeChangeover(item.date)}}</text>
+        </view>
+      </view>
+    </view>
+  </block>
+</template>

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "i-icon": "../../dist/icon/index",
+    "i-input": "../../dist/input/index",
+    "i-toast": "../../dist/toast/index"
+  }
+}

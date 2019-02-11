@@ -1,0 +1,90 @@
+.subNews-branch {
+    width: 750rpx;
+    padding-left: 40rpx;
+    padding-right: 40rpx;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.subNews-branch::after {
+    content: "";
+    position: absolute;
+    width: 178.6667%;
+    height: 200%;
+    top: 0;
+    left: 40rpx;
+    border-bottom: 1rpx solid rgba(177, 177, 177, 0.6);
+    transform: scale(0.5);
+    transform-origin: 0 0;
+}
+
+.subNews-branch .subNews-branch-time {
+    height: 77rpx;
+    font-size: 24rpx;
+    line-height: 77rpx;
+    color: #a7a7ac;
+    z-index: 9;
+}
+.subNews-branch .subNews-branch-content {
+    font-size: 30rpx;
+    line-height: 42rpx;
+    width: 100%;
+    z-index: 9;
+}
+.subNews-branch .imgBox {
+    z-index: 9;
+}
+.subNews-branch-content .canOpenText {
+    display: inline-block;
+    margin-top: -52rpx;
+}
+.subNews-branch-content .hide{
+    display: -webkit-box; 
+    /*规定子元素的排列方向 */
+    -webkit-box-orient: vertical; 
+     /*限制文本显示的行数  */
+    -webkit-line-clamp:7;
+    /*实现多余的文字隐藏并用省略号来代表被隐藏的文字  */
+    overflow: hidden;
+    text-overflow:ellipsis;
+}
+.subNews-branch-content .openTap {
+    z-index: 9;
+    font-size: 30rpx;
+    color: #2d427c;
+}
+.subNews-branch .subNews-branch-from {
+    z-index: 9;
+    box-sizing: border-box;
+    height: 84rpx;
+    line-height: 84rpx;
+    /* padding-top: 20rpx;
+    padding-bottom: 20rpx; */
+    font-size: 26rpx;
+    color: #a7a7ac;
+}
+.subNews-branch .subNews-branch-from .formManImg {
+    margin-bottom: -10rpx;
+    width: 44rpx;
+    height: 44rpx;
+    background-color: yellow;
+    border-radius: 22rpx;
+    margin-left: 6rpx;
+    margin-right: 6rpx;
+} 
+.subNews-branch .subNews-branch-bottom {
+    z-index: 9;
+    margin-top: -6rpx;
+    height: 73rpx;
+    font-size: 22rpx;
+    line-height: 73rpx;
+    color: #cdcccc;
+}
+.subNews-branch .subNews-branch-bottom .dianzanNum{
+    margin-right: 68rpx;
+}
+.subNews-branch .subNews-branch-bottom .fenxiang{
+    z-index: 99;
+    float: right;
+}

@@ -1,0 +1,62 @@
+<import src="../../templates/listtemplate" />
+<view>
+  <scroll-view scroll-x="true" class="tab-h" scroll-left="{{scrollLeft}}">
+    <i-tabs current="{{ currentTab }}" color="#f759ab" bindchange="handleChange" i-class="tab-item">
+      <i-tab key="0" title="推荐   " dot i-class="tabs_item"></i-tab>
+      <i-tab key="1" title="最新   " dot i-class="tabs_item"></i-tab>
+      <i-tab key="2" title="最热   " dot i-class="tabs_item"></i-tab>
+    </i-tabs>
+    <view wx:if="{{currentTab==0}}" style='margin-bottom:20rpx'>
+      <van-notice-bar left-icon="https://7465-test-183339-1257996776.tcb.qcloud.la/timg.png?sign=523c6ae43f97e0ac802d5358055d720f&t=1541754449" text="{{notice}}" />
+    </view>
+  </scroll-view>
+  <swiper current="{{currentTab}}" duration="300" bindchange="switchTab" style="height:{{winHeight+200}}rpx" class="{{currentTab==0?'tab-content':'tab-content-other'}}">
+    <swiper-item wx:for="{{[0,1,2]}}" wx:key="this">
+      <scroll-view scroll-y="true" class='scoll-h' bindscrolltolower="laodMore" bindscrolltoupper="refreshMore">
+        <view>
+          <view class="selection" wx:if="{{currentTab==0}}">
+            <swiper indicator-dots="true" autoplay="true" interval="3000" duration="1000">
+              <block wx:for="{{imgUrls}}" wx:key="this">
+                <swiper-item>
+                  <image wx:if="{{item}}" src="{{item}}" class="slide-image" width="355" height="150" />
+                </swiper-item>
+              </block>
+            </swiper>
+          </view>
+          <view class="selection" wx:if="{{currentTab==0}}">
+            <view class="head">
+              <text>热点推荐</text>
+              <text class="text-all">精品</text>
+            </view>
+            <view class='content'>
+              <view class="content-item" wx:for="{{contentItems}}" wx:key="this">
+                <image wx:if="{{img[index]}}" src="{{img[index]}}"></image>
+                <view class="content-item-text">
+                  <text>热点推荐</text>
+                </view>
+              </view>
+            </view>
+          </view>
+          <view class="selection">
+            <view class="head" wx:if="{{currentTab==0}}">
+              <text>热点文章</text>
+              <text class="text-all">精品</text>
+            </view>
+          </view>
+          <view class='tab-content-item'>
+            <block wx:for="{{newsList}}" wx:key="this">
+              <view class='section_list' bindtap="navigateDetail" data-itemId="{{item._id}}">
+                <template is="listbar" data="{{...item}}"></template>
+              </view>
+            </block>
+          </view>
+        </view>
+        <i-load-more tip="{{hasNext?'':'等你来分享'}}" loading="{{ hasNext }}" />
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+  <view bindtap='addArticle'>
+    <image class="add_icon" src="../../images/icon/collection.png"></image>
+  </view>
+  <i-toast id="toast" />
+</view>

@@ -1,0 +1,7 @@
+/* pages/share/share.wxss */
+page{
+  height: auto
+}
+.load-class{
+  padding-bottom: 100rpx;
+}

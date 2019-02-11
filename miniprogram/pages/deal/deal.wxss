@@ -1,0 +1,6 @@
+page{
+  height: auto
+}
+.load-class{
+  padding-bottom: 100rpx;
+}

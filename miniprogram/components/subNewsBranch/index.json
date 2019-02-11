@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "icon": "../icon/index",
+    "subImage": "../subImage/index",
+    "share": "../share/index"
+  }
+}

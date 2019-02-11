@@ -1,0 +1,42 @@
+<block wx:for="{{comments}}" wx:for-item="item" wx:for-index="idx" wx:key="index">
+
+<view class="comment-wrapper">
+    <view class="comment-info">
+        <image class="comment-info-avatar" src="{{item.fromMan.avatar}}" mode="aspectFill"></image>
+        <view class="comment-info-center">
+            <text class="comment-info-username">{{item.fromMan.nickname}}</text>
+            <text class="comment-info-time">{{item.time}}</text>
+        </view>
+        <view class="comment-info-right" >
+            <text class="dianzanNum">{{likeNumList[idx]?likeNumList[idx]:item.likeNum}}</text>
+            <icon type="dianzan" size="{{doneList[idx]?45:26}}" color="{{doneList[idx]?'#b80000':'#cdcccc'}}" bindtap="likeAdd" data-hi="{{item}}" data-idx="{{idx}}"></icon>
+        </view>
+    </view>
+    <view class="comment-content">
+        <view class="content-box">
+            <text class="comment-content-main">{{item.content}}</text>
+        </view>
+        
+
+        <block wx:if="{{item.response.length>0&&comments.length>1}}">
+
+            <view class="comment-content-response">
+            <view class="response-box">
+                <block wx:for="{{item.response}}" wx:for-item="responseItem" wx:key="index">
+                    <block wx:if="{{index<=1}}">
+                    <view>
+                        <text class="blue" decode="{{true}}">{{responseItem.fromMan.nickname}}:&ensp;</text>
+                        <text>{{responseItem.content}}</text>
+                    </view>
+                    </block>
+                </block>
+                <text class="responseNum" bind:tap="goCommentDetail" data-hi="{{item}}" data-idx="{{idx}}">共{{item.response.length}}条回复 ></text>
+            </view>
+        </view>
+
+        </block>
+        
+    </view>
+</view>
+
+</block>

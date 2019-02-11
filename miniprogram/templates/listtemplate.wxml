@@ -1,0 +1,71 @@
+<wxs module="timeChangeover" src="../utils/timeChangeover.wxs"></wxs>
+<template name="listbar">
+  <view class="news-wrapper">
+    <view class='list-item-images'>
+      <swiper indicator-dots="true" autoplay="true" interval="3000" duration="1000">
+        <block wx:for="{{images}}" wx:key="this">
+          <swiper-item>
+            <image src="{{item}}" class="list-item-images-image" />
+          </swiper-item>
+        </block>
+      </swiper>
+      <view class="content-item-text">
+        来自 {{school==null?device:school}}
+      </view>
+      <image class="avatar" src="{{avatarUrl}}"></image>
+    </view>
+    <view class='list-item-text'>
+      <view class="list-item-text-subject">
+        {{subject}}
+      </view>
+      <view class="list-item-text-content">
+        <text> {{content}} </text>
+      </view>
+      <view class="location" wx:if="{{location.length>0}}">
+        <image src='https://7465-test-183339-1257996776.tcb.qcloud.la/静态图片/location1.jpg?sign=ac10e6317ffd2c6817da81cebaf9b8cf&t=1545128301'></image>
+        <text>{{location}}</text>
+      </view>
+      <view class='selection'></view>
+      <!-- <view class="new-img-num">
+        <view>
+          <image src="../../assets/svgs/message.svg" class="new-img"></image>
+          <text class="new-num">{{lookNum}}</text>
+        </view>
+        <view>
+          <image src="../../images/xg.png" class="new-img"></image>
+          <text class="new-num">{{loveNum}}</text>
+        </view>
+        <view class="new-date">
+          {{timeChangeover.timeChangeover(date)}}
+        </view>
+      </view> -->
+      <view class="fd-data">
+        <view class="fd-data-item">
+          <view class="fd-data-num">{{lookNum}}</view>
+          <view class="fd-data-title">看过</view>
+        </view>
+        <view class="fd-data-item">
+          <view class="fd-data-num">{{loveNum}}</view>
+          <view class="fd-data-title">喜欢</view>
+        </view>
+        <view class="fd-data-item">
+          <view class="fd-data-num">{{replyNum}}</view>
+          <view class="fd-data-title">评论</view>
+        </view>
+      </view>
+      <view class="card-con-wrap">
+        <view class='card-con-left'>
+          <view class='card-author'>{{author}}</view>
+          <view class='card-tag'>{{type}}</view>
+          <view class='card-fromNow'>{{timeChangeover.timeChangeover(date)}}</view>
+        </view>
+        <view class='card-con-right'>
+          <view class='card-agree' catchtap='toAgree' data-id='{{item._id}}'>
+            <image src="/images/{{loveNum==0?'agree.png':'agree-a.png'}}" class="ripple {{loveNum==0?'':'rubberBand'}}"></image>
+            <text>{{loveNum}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

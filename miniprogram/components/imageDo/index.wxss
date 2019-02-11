@@ -1,0 +1,34 @@
+
+ page 
+ .imagePage-wrapper {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    /* height100%为1334rpx */
+    padding-bottom: 292rpx;
+    padding-top: 292rpx;
+    background-color: #000000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+.imagePageHidden {
+    display: none;
+}
+.indexOfImg {
+    position: absolute;
+    height: 78rpx;
+    width: 100%;
+    line-height: 78rpx;
+    font-size: 26rpx;
+    color: #ffffff;
+    top: 26rpx;
+    text-align: center;
+}
+
+.imageDo {
+    height: 750rpx;
+    width: 750rpx;
+    background-color: #fff;
+}
